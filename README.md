@@ -63,7 +63,7 @@ in code (horizontalTransmission.R and verticalTransmission.R)
 -----------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------
 *****************************
-CODES
+CODE
 *****************************
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
@@ -105,7 +105,7 @@ Vertical and horizontal transmission
 ------------------------------------------------------------------------------------------------------------------------
 
 
-1.EXECUTION and NETWORK LOADING
+1. EXECUTION and NETWORK LOADING
 ---------------------------------
 
 Execution files: "VerticalTransmission.R" and "horizontalTransmission.R" 
@@ -139,10 +139,10 @@ load or paste the text "VerticalTransmission.R" and "horizontalTransmission.R" i
 retrieve
 
 "pe" 
-proportion of neighbors sharing agent¥s easy conventions averaged across agents. (in Fig 1= "mean proportion of neighbors that share an agent¥s convention, averaged across all convention-agents")
+proportion of neighbors sharing agent's easy conventions averaged across agents. (in Fig 1= "mean proportion of neighbors that share an agent's convention, averaged across all convention-agents")
 
 "ph" 
-proportion of neighbors sharing agent¥s hard conventions averaged across agents. (in Fig 1= "mean proportion of neighbors that share an agent¥s convention, averaged across all convention-agents")
+proportion of neighbors sharing agent's hard conventions averaged across agents. (in Fig 1= "mean proportion of neighbors that share an agent's convention, averaged across all convention-agents")
 
 
 "numIEEA" 
