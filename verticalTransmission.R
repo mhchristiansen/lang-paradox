@@ -8,7 +8,7 @@ load ("Matrices30.rdata"); #loading the network for population size X in Matrice
 #parameter setting
 #----------------------------------------------------------------
 
-nnumber= 1; #network number in networks� file L (in file MatricesX.rdata)
+nnumber= 8; #network number in networks짜 file L (in file MatricesX.rdata)
 
 ag=30; #population size (number of agents)
 
@@ -20,9 +20,9 @@ iterations =1000; #number of iterations
  
 parameterActive = (0.1)*ag; # 10% of population size
 
-doff=200; #for each of the M convention tokens stored, there is a  probability p = 1/doff that this token is 'forgotten.'
+doff=500; #for each of the M convention tokens stored, there is a  probability p = 1/doff that this token is 'forgotten.'
 
-numSeed =13; # random seed
+numSeed =21; # random seed
 
 set.seed(numSeed);
 
@@ -32,13 +32,13 @@ set.seed(numSeed);
 
 conAg= matrix(0,ag,ag); #matrix of agent connectivity
 
-neigMat= matrix(0,ag,ag); #matrix of agent큦 neighbors
+neigMat= matrix(0,ag,ag); #matrix of agent짜s neighbors
 
 mesa= c(); #vector for conventions [i]. Dynamically growing list
  
 mesaIndice= c(); # the hard/easy index of each convention [i] 
 		 
-wUttered= mat.or.vec(ag,1);#number of tokens(costumers) for agent큦 active conventions
+wUttered= mat.or.vec(ag,1);#number of tokens(costumers) for agent짜s active conventions
 
 visionMesa=c(); #matrix (columns: number of agents (j). Rows (i) grow dynamically as number of conventions grow. Value (i,j) = 1 if convention i is understood by agent j and 0 if it is not. 
 
@@ -222,7 +222,7 @@ if (u < (wUttered[nagent]+1))
 	forSample[[nagent]]=tempL;
 	tempL=c();
       
-      #updates number of agent큦 uttered conventions
+      #updates number of agent짜s uttered conventions
       wUttered[nagent]= wUttered[nagent]+1;
       
       #updates convention list 
@@ -292,7 +292,7 @@ if (u==(wUttered[nagent]+1))
 	forSample[[nagent]]=tempL;
 	tempL=c();
 
-     #updates agent큦 uttered conventions
+     #updates agent짜s uttered conventions
 	wUttered[nagent]= wUttered[nagent]+1;
 
 	#updates reservoir of heard conventions
@@ -319,7 +319,7 @@ if (u==(wUttered[nagent]+1))
 	forSample[[neighbor]]=tempL;
 	tempL=c();
 
-     #updates neighbor큦 conventions
+     #updates neighbor짜s conventions
 	temp = wHeardReservoir[[nword]][neighbor];
 if(mesaIndice[[nword]][1]==1)
 {	if(temp==thresEasy)
@@ -435,7 +435,7 @@ write.table(distEffectiveTables, "file.txt", sep="\n");
 iMesaEEA= c();
 iMesaEH = c();
 
-xx = length(iMesaEfinal)
+xx = length(mesaIndice)
 
 for (j in seq(xx))
 {
@@ -443,12 +443,12 @@ for (j in seq(xx))
 	
 	if(xx1==2)
 	{
-	iMesaEH[[j]]=iMesaEfinal[[j]];
+	iMesaEH[[j]]=activeTables[[j]][1];
 	iMesaEEA[[j]]=0;
 	}
 	if(xx1==1)
 	{
-	iMesaEEA[[j]]=iMesaEfinal[[j]];
+	iMesaEEA[[j]]=activeTables[[j]][1];
 	iMesaEH[[j]]=0;
 	}
 
@@ -456,7 +456,8 @@ for (j in seq(xx))
 
 
 #---------------------------------------------------------------
-# number of active/successful conventions #---------------------------------------------------------------
+# number of active/successful conventions 
+#---------------------------------------------------------------
 
 numIEH=0;
 
@@ -563,7 +564,7 @@ nC[[xx1]][i]=xx3; #number of succesful conventions
 	}
       if ((xx2==0)||(xx3==0))
 	{
-     tempL=c();
+                  tempL=c();
 	tempL= SuccConPerAg[[i]];
 	tempL= c(tempL,0);
 	SuccConPerAg[[i]]=tempL;
@@ -603,7 +604,7 @@ longitCon = length(forSample[[i]]);
 for (j in seq(longitCon))
 {
 	xx1= forSample[[i]][j]; #convention j in agent i
-	xx2= SuccConPerAg[[i]][j+1]; #whether convention xx1 is successful
+     xx2= SuccConPerAg[[i]][j+1]; #whether convention xx1 is successful
       xx3= mesaIndice[[xx1]][1];
 	 xx4= contadorCon[xx1];
       xx5 = propC[[xx1]][i];
@@ -642,12 +643,17 @@ mEEAA=mean(EEAPerAg);    #average number of "successful" conventions per agent (
 
 #---------------------------------------------------------------
 
-pe=contadorPROPe/contadorEASY; # mean proportion of neigbors that share an agent큦 convention, averaged across all convention-agents (EASY)
+pe=contadorPROPe/contadorEASY; # mean proportion of neigbors that share an agent짜s convention, averaged across all convention-agents (EASY)
 
-ph=contadorPROPh/contadorHARD; # mean proportion of neigbors that share an agent큦 convention, averaged across all convention-agents (HARD)
+ph=contadorPROPh/contadorHARD; # mean proportion of neigbors that share an agent짜s convention, averaged across all convention-agents (HARD)
 
 #---------------------------------------------------------------
 
-
+numIEEA
+numIEH
+mEEAA
+mEHA
+pe
+ph
 
 
