@@ -3,7 +3,7 @@ Code and data for simulating the effects of population size on grammar and vocab
 
 Article: Reali, F., Chater, N. & Christiansen, M.H. (2018). Simpler grammar, larger vocabulary: How population size affects language. Proceedings of the Royal Society B: Biological Sciences, 285, 20172586. https://doi.org/10.1098/rspb.2017.2586 
 
-Ben Falandays discovered a minor error in the original code, which has been corrected in the file "horizontalTransmission_corrected.R". The error only resulted in minor changes (differences of 4 percentage-points or less) and does not impact the overall results or interpretations thereof in the paper (see panels comparison.xlsx for details). We have therefore not changedd the results files or Fig. 1. However, any further work within this framework should use the corrected code. We thank Ben Falandays for informing us of the error in our code. 
+Ben Falandays discovered a minor error in the original code, which has been corrected in the file "horizontalTransmission_corrected.R". The error only resulted in minor changes (differences of 4 percentage-points or less) and does not impact the overall results or interpretations thereof in the paper (see the file "Code error details.xlsx" for details). We have therefore not changedd the results files or Fig. 1. However, any further work within this framework should use the corrected code. We thank Ben Falandays for informing us of the error in our code. 
 
 The data in results.xlxs are the simulation results plotted in Figure 1.
 The R codes used for simulations are the following:
