@@ -1,7 +1,9 @@
 # lang-paradox
 Code and data for simulating the effects of population size on grammar and vocabulary complexity
 
-Article: Reali, Chater and Christiansen (submitted). Simpler grammar, larger vocabulary: How population size affects language.
+Article: Reali, F., Chater, N. & Christiansen, M.H. (2018). Simpler grammar, larger vocabulary: How population size affects language. Proceedings of the Royal Society B: Biological Sciences, 285, 20172586. https://doi.org/10.1098/rspb.2017.2586 
+
+Ben Falandays discovered a minor error in the original code, which has been corrected in the file "horizontalTransmission_corrected.R". The error only resulted in minor changes (differences of 4 percentage-points or less) and does not impact the overall results or interpretations thereof in the paper. We have therefore not changedd the results files or Fig. 1. However, any further work within this framework should use the corrected code. We thank Ben Falandays for informing us of the error in our code. 
 
 The data in results.xlxs are the simulation results plotted in Figure 1.
 The R codes used for simulations are the following:
@@ -12,7 +14,7 @@ RandomNetworksFunc2.R
 
 For vertical and horizontal transmission simulation:
 verticalTransmission.R
-horizontalTransmission.R
+horizontalTransmission_corrected.R
 
 -------------------------------------------------------------------------------------------------------------------------
 PARAMETERS 
@@ -27,9 +29,9 @@ PARAMETERS
 2. in tab labels: "horiz" and "vert" 
 3. f= 1/p 
 
-   notation in code (horizontalTransmission.R and verticalTransmission.R)
+   notation in code (horizontalTransmission_corrected.R and verticalTransmission.R)
 1. n = "ag"
-2. different code files "verticalTransmission.R" and "horizontalTransmission.R"  
+2. different code files "verticalTransmission.R" and "horizontalTransmission_corrected.R"  
 3. f = "doff"
 
 
@@ -54,7 +56,7 @@ in results.xlxS file:
 2¥. %EASY_SUCCESSFUL (for easy conventions) and %HARD_SUCCESSFUL (for hard conventions)
 3. propNeigh_Easy (for easy conventions) and propNeigh_Hard (for hard conventions)
 
-in code (horizontalTransmission.R and verticalTransmission.R)
+in code (horizontalTransmission_corrected.R and verticalTransmission.R)
 
 1. mEEAA (for easy conventions)  mEHA (for hard conventions)
 2. numIEEA (for easy conventions) and numIEH (for hard conventions)
@@ -108,17 +110,17 @@ Vertical and horizontal transmission
 1. EXECUTION and NETWORK LOADING
 ---------------------------------
 
-Execution files: "VerticalTransmission.R" and "horizontalTransmission.R" 
+Execution files: "VerticalTransmission.R" and "horizontalTransmission_corrected.R" 
 
 Network connectivity data: 
-Load Matrices[*].rdata, set the loading command manually at the beginning of "VerticalTransmission.txt" and "horizontalTransmission.R", where [*] corresponds to population size. 
+Load Matrices[*].rdata, set the loading command manually at the beginning of "VerticalTransmission.txt" and "horizontalTransmission_corrected.R", where [*] corresponds to population size. 
 
 One of the networks in Matrices[*].rdata should be chosen for a given simulation. 
 Please choose the network number "x" by setting the parameter nnumber=x
 
 2. PARAMETER SETTING
 --------------------------------
-Parameter setting is done at the initial lines of "VerticalTransmission.R" and "horizontalTransmission.R"
+Parameter setting is done at the initial lines of "VerticalTransmission.R" and "horizontalTransmission_corrected.R"
 
 ag=X; population size (number of agents)
 
@@ -132,7 +134,7 @@ doff=X; 1/p, where p is the probability of dying off
 
 3. EXECUTION
 --------------------------------
-load or paste the text "VerticalTransmission.R" and "horizontalTransmission.R" in R console
+load or paste the text "VerticalTransmission.R" and "horizontalTransmission_corrected.R" in R console
 
 4. OUTPUTS
 --------------------------------
